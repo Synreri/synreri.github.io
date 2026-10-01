@@ -1,0 +1,31 @@
+title: "StAndrewsFall的博客"
+description: "记录学习、生活与值得留下的想法。"
+author: "StAndrewsFall"
+url: "https://synreri.github.io"
+baseurl: ""
+lang: "zh-CN"
+timezone: "Asia/Shanghai"
+permalink: /posts/:title/
+markdown: kramdown
+highlighter: rouge
+future: false
+show_drafts: false
+encoding: utf-8
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - templates
+  - .private-drafts
+  - scripts
+

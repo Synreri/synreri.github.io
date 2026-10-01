@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<section class="hero" aria-labelledby="home-title">
+  <div><div class="eyebrow">Notes on learning & living</div><h1 id="home-title">学习、生活，<br>与一些想法。</h1><p>记录探索的过程，也留住日常的片刻。</p></div>
+  <div class="margin-note"><div class="number">01 /</div><p>从第一篇开始。<br>让想法有一个自己的地方。</p></div>
+</section>
+<div class="content">
+  <section aria-labelledby="posts-title">
+    <h2 class="section-label" id="posts-title">文章<span>{{ site.posts | size }} 篇文章</span></h2>
+    {% for post in site.posts %}
+    <article class="post">
+      <div class="meta"><span class="category">{{ post.category | default: '随笔' | escape }}</span><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y.%m.%d' }}</time>{% if post.sample %}<span>示例文章</span>{% endif %}</div>
+      <a class="post-link" href="{{ post.url | relative_url }}"><h3>{{ post.title | escape }}</h3><p>{{ post.description | default: post.excerpt | strip_html | normalize_whitespace | truncate: 140 | escape }}</p><span class="read">阅读全文</span></a>
+    </article>
+    {% else %}<p class="empty">第一篇文章，正在路上。</p>{% endfor %}
+  </section>
+  <aside class="sidebar" id="about" tabindex="-1"><h2>关于这个角落</h2><p>这里会放下学习过程中的发现、生活里的观察，以及还在慢慢成形的想法。</p><p>不急着给每件事一个答案，先认真地记录。</p><div class="small-title">写些什么 / Topics</div><div class="topics"><span class="topic">学习笔记</span><span class="topic">生活随笔</span><span class="topic">写作</span></div><p class="note">博客刚刚开始。标注为“示例文章”的内容，等待换成自己的故事。</p></aside>
+</div>

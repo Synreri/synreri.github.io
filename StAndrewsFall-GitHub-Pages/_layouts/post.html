@@ -1,0 +1,11 @@
+---
+layout: default
+---
+<article class="article" aria-labelledby="article-title">
+  <a class="back" href="{{ '/' | relative_url }}">返回文章列表</a>
+  <div class="eyebrow">{{ page.category | default: '随笔' | escape }}</div>
+  <h1 id="article-title">{{ page.title | escape }}</h1>
+  <div class="article-meta"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y年%m月%d日' }}</time><span>{{ page.author | default: site.author | escape }}</span>{% if page.sample %}<span>示例文章</span>{% endif %}</div>
+  <div class="prose">{{ content }}</div>
+  {% if page.sample %}<div class="article-end">这是一篇用于展示阅读效果的示例文章，可以替换为你的原创内容。</div>{% endif %}
+</article>
